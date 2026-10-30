@@ -148,6 +148,7 @@ const MENU_DATA = [
     prepMins: 3,
     price: 3.75,
     preview: '🍋',
+    image: 'pict/lemon-tea.jpg',
     variants: [
       { name: 'Dingin', price: 0 },
       { name: 'Hangat', price: 0 },
@@ -174,6 +175,7 @@ const MENU_DATA = [
     prepMins: 8,
     price: 9.50,
     preview: '🍗',
+    image: 'pict/rice-chicken.jpg',
     variants: [
       { name: 'Sambal matah terpisah', price: 0 },
       { name: 'Sambal matah ekstra', price: 0.75 },
@@ -281,6 +283,7 @@ const MENU_DATA = [
     prepMins: 6,
     price: 4.00,
     preview: '🍟',
+    image: 'pict/singkong-keju.jpg',
     variants: [
       { name: 'Keju parut', price: 0 },
       { name: 'Sambal bawang', price: 0.50 },
@@ -465,6 +468,7 @@ const MENU_DATA = [
 
 let state = {
   mode: 'TABLE',
+  colorTheme: 'dark',
   menuCategory: 'ALL',
   tableNumber: '04',
   tableThemes: {
@@ -532,6 +536,19 @@ function switchView(viewName, btnEl) {
   document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
   btnEl.classList.add('active');
   renderAll();
+}
+
+function toggleColorTheme() {
+  state.colorTheme = state.colorTheme === 'dark' ? 'light' : 'dark';
+  renderColorTheme();
+}
+
+function renderColorTheme() {
+  const isDark = state.colorTheme === 'dark';
+  document.documentElement.dataset.theme = state.colorTheme;
+  const button = document.getElementById('themeToggle');
+  button.textContent = isDark ? '☀️ Light mode' : '🌙 Dark mode';
+  button.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
 }
 
 function getMenuVisual(item, imageClass) {
@@ -943,6 +960,7 @@ function renderKDS(flashedTicketId = null) {
 }
 
 function renderAll() {
+  renderColorTheme();
   const badge = document.getElementById('globalThrottleBadge');
   const banner = document.getElementById('throttleBanner');
   const kdsBtn = document.getElementById('btnThrottleToggle');

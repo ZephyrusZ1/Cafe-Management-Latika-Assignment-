@@ -10,6 +10,8 @@
   --bg-card-hover: #25313b;
   --bg-elevated: #2a3744;
   --border-color: #2f3e4d;
+  --topbar-bg: rgba(15, 20, 25, 0.92);
+  --image-bg: #202a31;
   --text-main: #f3f6f9;
   --text-muted: #9aa8b6;
   --text-dim: #687786;
@@ -27,12 +29,52 @@
   --danger-bg: rgba(239, 68, 68, 0.14);
   --purple: #a855f7;
   --purple-bg: rgba(168, 85, 247, 0.15);
+  color-scheme: dark;
 
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.28);
   --transition: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f4f7f5;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f5f2;
+  --bg-elevated: #e8efeb;
+  --border-color: #d3ddd7;
+  --topbar-bg: rgba(255, 255, 255, 0.94);
+  --image-bg: #e7eee8;
+  --text-main: #17231d;
+  --text-muted: #52635a;
+  --text-dim: #64746b;
+  --accent-table: #07875d;
+  --accent-table-bg: rgba(16, 185, 129, 0.12);
+  --accent-pickup: #aa6800;
+  --accent-pickup-bg: rgba(245, 158, 11, 0.14);
+  --accent-delivery: #2463bd;
+  --accent-delivery-bg: rgba(59, 130, 246, 0.12);
+  --danger: #c62828;
+  --danger-bg: rgba(239, 68, 68, 0.1);
+  --purple: #7e36bd;
+  --purple-bg: rgba(168, 85, 247, 0.1);
+  --shadow-card: 0 8px 24px rgba(32, 54, 42, 0.1);
+  color-scheme: light;
+}
+
+[data-theme="light"] .throttle-banner,
+[data-theme="light"] .throttle-pill.throttled,
+[data-theme="light"] .lock-reason,
+[data-theme="light"] .btn-action.active-toggle {
+  color: #842121;
+}
+
+[data-theme="light"] .migration-notice,
+[data-theme="light"] .sync-title,
+[data-theme="light"] .sync-detail {
+  color: #56317a;
 }
 
 * {
@@ -56,7 +98,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(15, 20, 25, 0.92);
+  background: var(--topbar-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   padding: 0.85rem 1.5rem;
@@ -130,6 +172,28 @@ body {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   color: var(--text-muted);
+}
+
+.theme-toggle {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: var(--bg-secondary);
+  color: var(--text-main);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  background: var(--bg-card-hover);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--accent-table);
+  outline-offset: 3px;
 }
 
 .throttle-pill.throttled {
@@ -394,7 +458,7 @@ body {
   background:
     radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.2), transparent 34%),
     radial-gradient(circle at 75% 80%, rgba(16, 185, 129, 0.2), transparent 36%),
-    linear-gradient(135deg, #303d43, #202a31);
+    linear-gradient(135deg, #303d43, var(--image-bg));
 }
 
 .menu-food-image {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,6 +24,8 @@
       <button class="view-btn" onclick="switchView('KDS', this)">2. Owner Control Tower (KDS)</button>
     </div>
 
+    <button id="themeToggle" class="theme-toggle" type="button"
+      aria-label="Switch to light mode" onclick="toggleColorTheme()">☀️ Light mode</button>
     <div id="globalThrottleBadge" class="throttle-pill">Load Balancer: Normal (ETAs Standard)</div>
   </header>
 

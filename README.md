@@ -5,13 +5,13 @@ Aplikasi yang berfungsi untuk memudahkan bisinis kafe dan restoran dalam memesan
 
 **Teknologi yang digunakan**
 
-Bahasa:HTML, CSS dan JavaScript
-AI:Gemini dan VScode Co-pilot
+Bahasa:HTML, CSS dan JavaScript.
+AI:Gemini dan VScode Co-pilot.
 Library:-
 
 **AI Disclosure**
 
-Majority of this app is made by AI with a few exception like item card panel, item preview, table choosing, the menu that's choosen to be shown and dark-light mode
+Majority of this app is made by AI with a few exception like item card panel, item preview, table choosing, the menu that's chosen to be shown and dark-light mode
 
 **Cara Penggunaan**
 

@@ -1,7 +1,6 @@
-**Judul**
+**Order Here!**
 
-Order Here!
-Aplikasi yang berfungsi untuk memudahkan bisinis kafe dan restoran dalam memesan makanan dimana pelanggan bisa memilih cara pesan berdasarkan dine-in, take away dan delivery. Kami menemukan salah satu masalah terbesar dalam mengurus usaha seperti itu adalah adanya masalah dalam management orderan pelanggan dimana pengurus sering kali merasa kesulitan untuk mengingat pesanan pelanggan sehingga sering terjadi masalah seperti pesanan yang datang terlambat atau pesanan yang tidak sesuai. Kami merumuskan aplikasi yang berfungsi untuk mengurutkan pesanan pelanggan dan memudahkan pelanggan untuk membeli makanan dan pengurus bisnis untuk menata pesanan agar tidak terjadi kekeliruan. Target penggunaan aplikasi ini adalah pemilik bisnis yang membutahkan bantuan dalam mengurus usahanya terutama dalam mempersiapkan pesanan.
+Aplikasi yang berfungsi untuk memudahkan bisinis kafe dan restoran dalam pemesanan makanan dimana pelanggan bisa memilih pesan dine-in, take away dan delivery. Kami menemukan salah satu masalah terbesar dalam mengurus usaha seperti itu adalah adanya masalah dalam management pesanan pelanggan dimana pengurus sering kali merasa kesulitan untuk mengingat pesanan pelanggan sehingga sering terjadi masalah seperti pesanan yang datang terlambat atau pesanan yang tidak sesuai. Kami merumuskan aplikasi yang berfungsi untuk mengurutkan pesanan pelanggan dan memudahkan pelanggan untuk membeli makanan dan pengurus bisnis untuk menata pesanan agar tidak terjadi kekeliruan. Target penggunaan aplikasi ini adalah pemilik bisnis yang membutahkan bantuan dalam mengurus usahanya terutama dalam mempersiapkan pesanan.
 
 **Teknologi yang digunakan**
 
@@ -13,7 +12,9 @@ Library:-
 
 **AI Disclosure**
 
-Majority of this app is made by AI with a few exception like item card panel, item preview, table choosing, the menu that's chosen to be shown and dark-light mode
+Majority of this app is made by AI with a few exception like item card panel, item preview, table selection, the menu that's chosen to be shown and dark-light mode.
+
+Sebagian besar pembuatan aplikasi ini menggunakan AI dengan beberapa pengecualian seperti panel kartu item, preview item, pemilihan meja, menu yang ditampilkan dan mode terang-gelap.
 
 **Cara Penggunaan**
 
@@ -41,5 +42,5 @@ Majukan Status Tiket memindahkan pesanan dari menunggu ke persiapan, lalu ke sia
 
 **Pemilik**
 
-Diaz Daffa Arbi Prasetya/XI/IPA/SMAN 1 Lawang
-Affan Syahtir Izzat Antoni/XI/Bahasa/SMAN 1 Lawang
+Diaz Daffa Arbi Prasetya/XI-05/IPA/SMAN 1 Lawang
+Affan Syahtir Izzat Antoni/XI-01/Bahasa/SMAN 1 Lawang

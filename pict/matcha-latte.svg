@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title description">
+  <title id="title">Es matcha latte</title>
+  <desc id="description">Ilustrasi gelas berisi matcha latte dingin berlapis susu.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f2f4df"/>
+      <stop offset="1" stop-color="#c5d6a2"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".85"/>
+      <stop offset=".45" stop-color="#e7f2d9" stop-opacity=".56"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".72"/>
+    </linearGradient>
+    <linearGradient id="matcha" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#a8c96b"/>
+      <stop offset="1" stop-color="#548440"/>
+    </linearGradient>
+    <filter id="shadow" x="-.3" y="-.3" width="1.6" height="1.8">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dy="12"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope=".2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="cup">
+      <path d="M206 117h230l-24 267a28 28 0 0 1-28 25H258a28 28 0 0 1-28-25z"/>
+    </clipPath>
+  </defs>
+  <rect width="640" height="480" rx="28" fill="url(#background)"/>
+  <circle cx="125" cy="106" r="52" fill="#ffffff" opacity=".3"/>
+  <circle cx="520" cy="365" r="76" fill="#ffffff" opacity=".25"/>
+  <ellipse cx="323" cy="415" rx="164" ry="22" fill="#62734a" opacity=".2"/>
+  <g filter="url(#shadow)">
+    <path d="M434 170h43a54 54 0 0 1 0 108h-51" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="18"/>
+    <path d="M206 117h230l-24 267a28 28 0 0 1-28 25H258a28 28 0 0 1-28-25z" fill="url(#glass)" stroke="#fff" stroke-opacity=".88" stroke-width="8"/>
+    <g clip-path="url(#cup)">
+      <path d="M215 260h214l-12 130H229z" fill="#f3edcf"/>
+      <path d="M215 213h220l-9 85H222z" fill="url(#matcha)"/>
+      <path d="M221 286c44-18 83 21 128 0s64-16 82-6l-7 54c-33 10-56-15-93-3s-72 12-118-6z" fill="#d9e8af" opacity=".92"/>
+      <path d="M236 174h44v55a18 18 0 0 1-44 0zM311 163h42v69a17 17 0 0 1-42 0zM374 181h43v48a17 17 0 0 1-43 0z" fill="#fff" opacity=".72"/>
+      <path d="M209 224c56-18 125 21 224-3" fill="none" stroke="#dce8c2" stroke-width="10" opacity=".8"/>
+    </g>
+    <path d="M251 132h124" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".7"/>
+    <path d="M383 105 424 70" stroke="#805c3b" stroke-width="13" stroke-linecap="round"/>
+    <path d="m422 72 56-48" stroke="#805c3b" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <path d="M122 338c21-26 48-36 81-30-13 30-38 48-73 47" fill="#73974e" opacity=".78"/>
+  <path d="M123 352c17-17 37-28 62-34" fill="none" stroke="#dce8c2" stroke-width="4" opacity=".8"/>
+</svg>

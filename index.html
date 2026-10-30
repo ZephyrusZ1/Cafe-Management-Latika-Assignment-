@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Context-Aware Cafe Fulfillment & Dynamic Menu Engine</title>
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-logo">CF</div>
+      <div>
+        <div class="brand-title">StateBrew POS &amp; Fulfillment Engine</div>
+        <div class="brand-subtitle">Context-Aware Menu &bull; Prep-Time Sync &bull; Live Channel Migration</div>
+      </div>
+    </div>
+
+    <div class="view-switcher">
+      <button class="view-btn active" onclick="switchView('POS', this)">1. Customer / Counter Menu</button>
+      <button class="view-btn" onclick="switchView('KDS', this)">2. Owner Control Tower (KDS)</button>
+    </div>
+
+    <div id="globalThrottleBadge" class="throttle-pill">Load Balancer: Normal (ETAs Standard)</div>
+  </header>
+
+  <main class="container">
+    <!-- Auto-Throttle Warning Banner -->
+    <div id="throttleBanner" class="throttle-banner">
+      <span><strong>Dine-In Load Balancing Active:</strong> Cafe table occupancy exceeds 80%. Pick-Up &amp; Delivery ETAs automatically extended by +15 mins to protect espresso bar quality.</span>
+      <button class="btn-action" onclick="toggleThrottle()">Disable Override</button>
+    </div>
+
+    <!-- ====================================================================
+         VIEW 1: CUSTOMER & COUNTER DYNAMIC MENU
+         ==================================================================== -->
+    <section id="view-POS" class="view-section active">
+      <div class="pos-grid">
+        <div>
+          <!-- Step 1: Fulfillment Mode State Machine -->
+          <div class="panel">
+            <div class="panel-header">
+              <span class="panel-title">Step 1 &mdash; Select Fulfillment State Machine</span>
+              <span id="activeStateCode" style="font-size:0.78rem; color:var(--text-muted); font-family:monospace;">STATE: MODE_TABLE_SERVICE</span>
+            </div>
+
+            <div class="mode-grid">
+              <button class="mode-card active" data-mode="TABLE" onclick="setFulfillmentMode('TABLE')">
+                <div class="mode-card-header">
+                  <span class="mode-name">In-Cafe Table</span>
+                  <span class="mode-eta" id="eta-TABLE">~5–8 mins</span>
+                </div>
+                <div class="mode-desc">Full ceramic &amp; glassware menu. Supports Open Tab &amp; table runner alert.</div>
+              </button>
+
+              <button class="mode-card" data-mode="PICKUP" onclick="setFulfillmentMode('PICKUP')">
+                <div class="mode-card-header">
+                  <span class="mode-name">Pick-Up Shelf</span>
+                  <span class="mode-eta" id="eta-PICKUP">~8–10 mins</span>
+                </div>
+                <div class="mode-desc">Hides fragile glassware. Holds cold drinks in STAGED state until GPS arrival ping.</div>
+              </button>
+
+              <button class="mode-card" data-mode="DELIVERY" onclick="setFulfillmentMode('DELIVERY')">
+                <div class="mode-card-header">
+                  <span class="mode-name">Courier Delivery</span>
+                  <span class="mode-eta" id="eta-DELIVERY">~20–25 mins</span>
+                </div>
+                <div class="mode-desc">Forces travel-safe split packaging, tamper seals &amp; 10-min isochrone check.</div>
+              </button>
+            </div>
+
+            <!-- Dynamic Context Bar -->
+            <div class="context-bar" id="contextBar"></div>
+          </div>
+
+          <!-- Step 2: Dynamic Context-Filtered Menu -->
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <span class="panel-title">Step 2 &mdash; Pilih favoritmu</span>
+                <p class="panel-hint">Lihat foto pada setiap menu, pilih variasi, lalu tambahkan ke pesanan.</p>
+              </div>
+              <span style="font-size:0.78rem; color:var(--text-muted);">Menu dan kemasan menyesuaikan cara pemesanan</span>
+            </div>
+            <div class="menu-filters" role="group" aria-label="Filter kategori menu">
+              <button class="filter-chip active" data-category="ALL" type="button" aria-pressed="true" onclick="setMenuCategory('ALL')">Semua</button>
+              <button class="filter-chip" data-category="MEAL" type="button" aria-pressed="false" onclick="setMenuCategory('MEAL')">Makanan</button>
+              <button class="filter-chip" data-category="DRINK" type="button" aria-pressed="false" onclick="setMenuCategory('DRINK')">Minuman</button>
+              <button class="filter-chip" data-category="SNACK" type="button" aria-pressed="false" onclick="setMenuCategory('SNACK')">Camilan</button>
+            </div>
+            <div id="menuGrid" class="menu-grid"></div>
+          </div>
+        </div>
+
+        <!-- Smart Ticket Cart Sidebar -->
+        <aside class="cart-sidebar">
+          <div id="cartBanner" class="cart-channel-banner"></div>
+
+          <div id="cartItems" class="cart-items"></div>
+
+          <div id="syncEngineBox" class="sync-engine-box"></div>
+
+          <div class="cart-summary">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+              <span id="feeLabel">Packaging / Channel Fee</span>
+              <span id="cartFee">$0.00</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <span id="cartTotal">$0.00</span>
+            </div>
+          </div>
+
+          <button class="btn-fire" onclick="submitOrderToKDS()">Fire Order to Unified KDS &rarr;</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 2: OWNER CONTROL TOWER & UNIFIED KDS
+         ==================================================================== -->
+    <section id="view-KDS" class="view-section">
+      <div class="kds-toolbar">
+        <div class="kds-metrics">
+          <div class="metric-box">
+            <div class="metric-label">Active Tickets</div>
+            <div class="metric-val" id="metricActiveCount">3</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-label">Table Occupancy</div>
+            <div class="metric-val" id="metricTableLoad">72%</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-label">Pickup Shelf / Staged</div>
+            <div class="metric-val" id="metricStagedCount">1</div>
+          </div>
+        </div>
+
+        <div class="kds-actions">
+          <button class="btn-action" onclick="simulateProximityPing()">
+            &#128205; Simulate Customer GPS Ping (&lt;3m Away)
+          </button>
+          <button id="btnThrottleToggle" class="btn-action" onclick="toggleThrottle()">
+            &#9889; Auto-Throttle Online ETAs (+15m)
+          </button>
+        </div>
+      </div>
+
+      <div id="kdsBoard" class="kds-board"></div>
+    </section>
+  </main>
+
+  <!-- Application State Machine Script -->
+  <script src = "script.js"> </script>
+ 
+</body>
+</html>

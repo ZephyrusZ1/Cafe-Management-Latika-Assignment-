@@ -1,14 +1,14 @@
 **Order Here!**
 
-Aplikasi yang berfungsi untuk memudahkan bisinis kafe dan restoran dalam pemesanan makanan dimana pelanggan bisa memilih pesan dine-in, take away dan delivery. Kami menemukan salah satu masalah terbesar dalam mengurus usaha seperti itu adalah adanya masalah dalam management pesanan pelanggan dimana pengurus sering kali merasa kesulitan untuk mengingat pesanan pelanggan sehingga sering terjadi masalah seperti pesanan yang datang terlambat atau pesanan yang tidak sesuai. Kami merumuskan aplikasi yang berfungsi untuk mengurutkan pesanan pelanggan dan memudahkan pelanggan untuk membeli makanan dan pengurus bisnis untuk menata pesanan agar tidak terjadi kekeliruan. Target penggunaan aplikasi ini adalah pemilik bisnis yang membutahkan bantuan dalam mengurus usahanya terutama dalam mempersiapkan pesanan.
+Aplikasi yang berfungsi untuk memudahkan bisinis kafe dan restoran dalam pemesanan makanan dimana pelanggan bisa memilih pesan dine-in, take away dan delivery. Kami menemukan salah satu masalah terbesar dalam mengurus usaha seperti itu adalah adanya masalah dalam mempersiapkan pesanan pelanggan dimana pengurus sering kali merasa kesulitan untuk mengingat pesanan pelanggan sehingga sering terjadi masalah seperti pesanan yang datang terlambat atau pesanan yang tidak sesuai. Kami merumuskan aplikasi yang berfungsi untuk mengurutkan pesanan pelanggan dan memudahkan pelanggan untuk membeli makanan dan pengurus bisnis untuk menata pesanan agar tidak terjadi kekeliruan. Target penggunaan aplikasi ini adalah mempermudah pemilik bisnis yang membutahkan bantuan dalam mengurus usahanya terutama dalam mempersiapkan pesanan.
 
 **Teknologi yang digunakan**
 
-Bahasa:HTML, CSS dan JavaScript.
+Bahasa: HTML, CSS dan JavaScript.
 
-AI:Gemini dan VScode Co-pilot.
+AI: Gemini dan VScode Co-pilot.
 
-Library:-
+Media Library: Google image finder
 
 **AI Disclosure**
 

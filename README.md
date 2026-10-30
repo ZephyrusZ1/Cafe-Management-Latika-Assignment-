@@ -1,12 +1,14 @@
 **Judul**
 
 Order Here!
-Aplikasi yang berfungsi untuk memudahkan bisinis kafe dan restoran dalam memesan makanan dimana pelanggan bisa memilih cara pesan berdasarkan dine-in, take away dan delivery. Salah utama yang dialam dalam menjalankan bisnis-bisnis seperti itu. Kami menemukan salah satu masalah terbesar dalam mengurus ussaha seperti itu adalah adanya masalah dalam management orderan pelanggan dimana pengurus sering kali merasa kesulitan untuk mengingat pesanan pelanggan sehingga sering terjadi masalah seperti pesanan yang datang terlambat atau pesanan yang tidak sesuai. Kami merumuskan aplikasi yang berfungsi untuk mengurutkan pesanan pelanggan dan memudahkan pelanggan untuk membeli makanan dan pengurus bisnis untuk menata pesanan agar tidak terjadi kekeliruan. Target penggunaan aplikasi ini adalah pemilik bisnis yang membutahkan bantuan dalam mengurus usahanya terutama dalam mempersiapkan pesanan.
+Aplikasi yang berfungsi untuk memudahkan bisinis kafe dan restoran dalam memesan makanan dimana pelanggan bisa memilih cara pesan berdasarkan dine-in, take away dan delivery. Kami menemukan salah satu masalah terbesar dalam mengurus usaha seperti itu adalah adanya masalah dalam management orderan pelanggan dimana pengurus sering kali merasa kesulitan untuk mengingat pesanan pelanggan sehingga sering terjadi masalah seperti pesanan yang datang terlambat atau pesanan yang tidak sesuai. Kami merumuskan aplikasi yang berfungsi untuk mengurutkan pesanan pelanggan dan memudahkan pelanggan untuk membeli makanan dan pengurus bisnis untuk menata pesanan agar tidak terjadi kekeliruan. Target penggunaan aplikasi ini adalah pemilik bisnis yang membutahkan bantuan dalam mengurus usahanya terutama dalam mempersiapkan pesanan.
 
 **Teknologi yang digunakan**
 
 Bahasa:HTML, CSS dan JavaScript.
+
 AI:Gemini dan VScode Co-pilot.
+
 Library:-
 
 **AI Disclosure**
